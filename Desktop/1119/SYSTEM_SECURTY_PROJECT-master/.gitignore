@@ -1,20 +1,3 @@
-# Android 관련 파일
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
 # Windows 시스템 디렉토리 제외
 AppData/
 Local Settings/
@@ -24,19 +7,18 @@ PrintHood/
 Recent/
 SendTo/
 Templates/
+시작 메뉴/
 desktop.ini
 Thumbs.db
-시작 메뉴/
 
-# IDE와 빌드 관련 파일 제외
+# IDE 관련 파일 제외
 .idea/
+*.iml
 *.class
-*.log
 .gradle/
 build/
 
 # 시스템 파일 및 기타 폴더 제외
-/CMakeBuilds/
 /Downloads/
 /Documents/
 /Videos/
@@ -48,11 +30,6 @@ build/
 /Links/
 *.exe
 *.zip
-*.tar.gz
 *.7z
+*.tar.gz
 *.dll
-*.mp4
-*.hwp
-
-# MacOS 관련 파일 (필요 시)
-.DS_Store
