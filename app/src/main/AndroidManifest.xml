@@ -54,6 +54,9 @@
             android:name=".UserListActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".DeleteUserActivity"
+            android:exported="true" />
 
 
 

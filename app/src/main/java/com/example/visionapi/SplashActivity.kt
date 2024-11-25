@@ -11,7 +11,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // 일정 시간 후 메인 액티비티로 이동
+
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, UserInputActivity::class.java)
             startActivity(intent)

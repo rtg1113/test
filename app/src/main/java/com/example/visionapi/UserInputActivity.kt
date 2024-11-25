@@ -17,6 +17,7 @@ class UserInputActivity : AppCompatActivity() {
         val nameInput = findViewById<EditText>(R.id.nameInput)
         val saveButton = findViewById<Button>(R.id.saveButton)
         val viewListButton = findViewById<Button>(R.id.viewListButton)
+        val deleteUserButton = findViewById<Button>(R.id.deleteUserButton)
 
         val userDatabase = UserDatabase.getInstance(this)
         val userDao = userDatabase?.UserDao()
@@ -25,11 +26,9 @@ class UserInputActivity : AppCompatActivity() {
             val name = nameInput.text.toString()
 
             if (name.isNotBlank()) {
-                // 사용된 UID를 가져와 가장 큰 UID 값을 찾기
                 val usedUids = userDao?.getAllUsers()?.map { it.uid } ?: emptyList()
-                val newUid = if (usedUids.isEmpty()) 1 else usedUids.max()!! + 1 // UID 순차 증가
+                val newUid = if (usedUids.isEmpty()) 1 else usedUids.max()!! + 1
 
-                // UID가 100 이하인지 확인
                 if (newUid <= 100) {
                     val user = User(
                         uid = newUid,
@@ -43,13 +42,10 @@ class UserInputActivity : AppCompatActivity() {
                     userDao?.insertUser(user)
                     Log.d("UserInputActivity", "Saved User: $user")
 
-                    // 데이터 저장 완료 메시지 표시
                     Toast.makeText(this, "사용자가 저장되었습니다! UID: $newUid", Toast.LENGTH_SHORT).show()
-
-                    // 입력 필드 초기화
                     nameInput.text.clear()
                 } else {
-                    Toast.makeText(this, "UID 범위가 초과되었습니다. 최대 100명의 사용자만 추가할 수 있습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "UID 범위를 초과했습니다.", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this, "이름을 입력하세요!", Toast.LENGTH_SHORT).show()
@@ -58,6 +54,11 @@ class UserInputActivity : AppCompatActivity() {
 
         viewListButton.setOnClickListener {
             val intent = Intent(this, UserListActivity::class.java)
+            startActivity(intent)
+        }
+
+        deleteUserButton.setOnClickListener {
+            val intent = Intent(this, DeleteUserActivity::class.java)
             startActivity(intent)
         }
     }

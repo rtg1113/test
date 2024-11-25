@@ -68,6 +68,7 @@ interface UserDao{
 
     @Query("SELECT uid FROM User")
     fun getUsers() : Array<Int>
+
 }
 
 @Database(entities = [User::class], version = 2) // 버전 변경
