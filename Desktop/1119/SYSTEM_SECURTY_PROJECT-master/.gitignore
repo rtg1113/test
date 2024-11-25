@@ -1,0 +1,58 @@
+# Android 관련 파일
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Windows 시스템 디렉토리 제외
+AppData/
+Local Settings/
+My Documents/
+Nethood/
+PrintHood/
+Recent/
+SendTo/
+Templates/
+desktop.ini
+Thumbs.db
+시작 메뉴/
+
+# IDE와 빌드 관련 파일 제외
+.idea/
+*.class
+*.log
+.gradle/
+build/
+
+# 시스템 파일 및 기타 폴더 제외
+/CMakeBuilds/
+/Downloads/
+/Documents/
+/Videos/
+/Pictures/
+/Music/
+/Saved Games/
+/OneDrive/
+/Favorites/
+/Links/
+*.exe
+*.zip
+*.tar.gz
+*.7z
+*.dll
+*.mp4
+*.hwp
+
+# MacOS 관련 파일 (필요 시)
+.DS_Store
